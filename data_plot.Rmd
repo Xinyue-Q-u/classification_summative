@@ -1,0 +1,25 @@
+---
+title: "data_plot"
+output: html_document
+---
+
+plot the cancellation proportion plot
+```{r}
+source("data_preprocessing.R")
+```
+```{r}
+library(ggplot2)
+ggplot(data, aes(x = as.factor(is_canceled))) +
+  geom_bar(fill = "steelblue") +
+  labs(title = "Cancellations", x = "Is Canceled (0 = No, 1 = Yes)", y = "Count") +
+  theme_minimal()
+```
+
+
+```{r}
+ggplot(data, aes(x = lead_time)) +
+  geom_histogram(binwidth = 10, fill = "steelblue", color = "black") +
+  labs(title = "Histogram of Lead Time", x = "Lead Time (Days)", y = "Frequency") +
+  theme_minimal()
+
+```
